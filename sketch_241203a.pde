@@ -3,7 +3,7 @@ float y = 0;
 float speed = 0;
 float gravity = 0.1;
 void setup(){
-  size(400,400);
+  size(800,400);
 }
 void draw(){
   background(50,50,220);
@@ -24,9 +24,10 @@ ellipse(100,y,10,10);
   //Adding gravity to the character, but insuring that it doesn't go back up
   y = y + speed;
   speed = speed + gravity;
-  if(y>height){
-    y = height;
-    println(gravity);
+  println(y);
+  if(y>350){
+    fill(255,0,0);
+    ellipse(100,y,50,50);
   }
 }
 // Use the enter button to reverse the direction of the bird character in order to doge obstacles
