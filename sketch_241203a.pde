@@ -5,6 +5,7 @@ Fire[] fireobject = new Fire[20];
 float y = 45;
 float speed = 0;
 float gravity = 0.1;
+boolean start = false;
 void setup(){
   size(800,400);
   for(int i=0; i < fireobject.length; i++){
@@ -13,6 +14,10 @@ void setup(){
   rocks = new Rocks();
 }
 void draw(){
+  if(keyCode==SHIFT){
+    start=true;
+  }
+  if (start==true){
   background(41,41,41);
   
   rocks.display2();
@@ -40,45 +45,25 @@ ellipse(100,y,10,10);
   y = y + speed;
   speed = speed + gravity;
   println(y);
-  if(y<40 || y>-frameCount/15+300){}
+  if(y<40 || y>-frameCount/23+300){}
   else {  
     fill(255);
   textSize(60);
    text("Distance:"+frameCount, 400, 50);
   }
-
-  if(y<40){
-    fill(255);
-    textSize(60);
-    text("Game Over", 250, 200);
-speed=0;
-gravity=0;
-fill(0);
-ellipse(100,y,50,50);
-rect(123,y,15,10);
-fill(255);
-ellipse(100,y,20,20);
-fill(0);
-ellipse(100,y,10,10);
-
-  }
-if(y>-frameCount/15+300){
-      fill(255);
-    textSize(60);
-    text("Game Over", 250, 200);
-   
-speed=0;
-gravity=0;
-fill(0);
-ellipse(100,y,50,50);
-rect(123,y,15,10);
-fill(255);
-ellipse(100,y,20,20);
-fill(0);
-ellipse(100,y,10,10);
+  
+if(y<40 || (y>-frameCount/23+300 || (frameCount==3000))){
+  start=false;
 }
 }
-// Use the enter button to reverse the direction of the bird character in order to doge obstacles
+else{
+  background(10,10,10);
+  frameCount=0;
+  textSize(30);
+  text("Press enter to change direciton, Press shift to start", 100, 200);
+}
+}
+// Use the enter button to reverse the direction of the bird character in order to dodge obstacles
  void keyPressed(){
    if (keyCode==ENTER) {
     speed = speed*-1;
