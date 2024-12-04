@@ -1,7 +1,7 @@
 // Declare Objects
 Fire[] fireobject = new Fire[20];
 //Declare Variables
-float y = 0;
+float y = 45;
 float speed = 0;
 float gravity = 0.1;
 void setup(){
@@ -35,9 +35,21 @@ ellipse(100,y,10,10);
   y = y + speed;
   speed = speed + gravity;
   println(y);
-  if(y>350){
-    fill(255,0,0);
-    ellipse(100,y,50,50);
+  if(y<40){
+    fill(255);
+    textSize(60);
+    text("Game Over", 250, 200);
+speed=0;
+gravity=0;
+fill(0);
+ellipse(100,y,50,50);
+rect(123,y,15,10);
+fill(255);
+ellipse(100,y,20,20);
+fill(0);
+ellipse(100,y,10,10);
+    
+    
   }
 }
 // Use the enter button to reverse the direction of the bird character in order to doge obstacles
