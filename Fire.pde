@@ -12,7 +12,7 @@ class Fire {
      //draw fire
      fill(255,100,0);
 triangle(random(5,1500), 50, 0, -100, 0, 25);
-rect(0,-frameCount/10+300,1000,1000);
+rect(0,-frameCount/15+300,1000,1000);
    }
   
   void move() {

@@ -1,4 +1,5 @@
 // Declare Objects
+Rocks rocks;
 Fire[] fireobject = new Fire[20];
 //Declare Variables
 float y = 45;
@@ -9,10 +10,14 @@ void setup(){
   for(int i=0; i < fireobject.length; i++){
     fireobject[i] = new Fire(300, 300);
   }
+  rocks = new Rocks();
 }
 void draw(){
-  background(50,50,220);
- 
+  background(41,41,41);
+  
+  rocks.display2();
+  rocks.move2();
+  
  for (int i = 0; i < fireobject.length; i++){
   fireobject[i].display();
   fireobject[i].move();
@@ -35,7 +40,7 @@ ellipse(100,y,10,10);
   y = y + speed;
   speed = speed + gravity;
   println(y);
-  if(y<40 || y>290){}
+  if(y<40 || y>-frameCount/15+300){}
   else {  
     fill(255);
   textSize(60);
@@ -57,7 +62,7 @@ fill(0);
 ellipse(100,y,10,10);
 
   }
-if(y>-frameCount/10+300){
+if(y>-frameCount/15+300){
       fill(255);
     textSize(60);
     text("Game Over", 250, 200);
@@ -72,7 +77,7 @@ ellipse(100,y,20,20);
 fill(0);
 ellipse(100,y,10,10);
 }
-  }
+}
 // Use the enter button to reverse the direction of the bird character in order to doge obstacles
  void keyPressed(){
    if (keyCode==ENTER) {
