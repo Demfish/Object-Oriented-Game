@@ -48,10 +48,22 @@ fill(255);
 ellipse(100,y,20,20);
 fill(0);
 ellipse(100,y,10,10);
-    
-    
   }
+if(y>290){
+      fill(255);
+    textSize(60);
+    text("Game Over", 250, 200);
+speed=0;
+gravity=0;
+fill(0);
+ellipse(100,y,50,50);
+rect(123,y,15,10);
+fill(255);
+ellipse(100,y,20,20);
+fill(0);
+ellipse(100,y,10,10);
 }
+  }
 // Use the enter button to reverse the direction of the bird character in order to doge obstacles
  void keyPressed(){
    if (keyCode==ENTER) {
