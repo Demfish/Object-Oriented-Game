@@ -35,6 +35,13 @@ ellipse(100,y,10,10);
   y = y + speed;
   speed = speed + gravity;
   println(y);
+  if(y<40 || y>290){}
+  else {  
+    fill(255);
+  textSize(60);
+   text("Distance:"+frameCount, 400, 50);
+  }
+
   if(y<40){
     fill(255);
     textSize(60);
@@ -48,11 +55,13 @@ fill(255);
 ellipse(100,y,20,20);
 fill(0);
 ellipse(100,y,10,10);
+
   }
-if(y>290){
+if(y>-frameCount/10+300){
       fill(255);
     textSize(60);
     text("Game Over", 250, 200);
+   
 speed=0;
 gravity=0;
 fill(0);
