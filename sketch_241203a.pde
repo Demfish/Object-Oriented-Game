@@ -1,12 +1,22 @@
-// Declare Variables
+// Declare Objects
+Fire[] fireobject = new Fire[20];
+//Declare Variables
 float y = 0;
 float speed = 0;
 float gravity = 0.1;
 void setup(){
   size(800,400);
+  for(int i=0; i < fireobject.length; i++){
+    fireobject[i] = new Fire(300, 300);
+  }
 }
 void draw(){
   background(50,50,220);
+ 
+ for (int i = 0; i < fireobject.length; i++){
+  fireobject[i].display();
+  fireobject[i].move();
+ }
   //Drawing the bird
     noStroke();
   fill(255,255,0);
