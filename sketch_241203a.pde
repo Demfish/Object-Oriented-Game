@@ -52,15 +52,15 @@ ellipse(100,y,10,10);
    text("Distance:"+frameCount, 400, 50);
   }
   
-if(y<40 || (y>-frameCount/23+300 || (frameCount==3000))){
+if(y<40 || (y>-frameCount/23+300 || (frameCount==2500))){
   start=false;
 }
 }
 else{
   background(10,10,10);
   frameCount=0;
-  textSize(30);
-  text("Press enter to change direciton, Press shift to start", 100, 200);
+  textSize(25);
+  text("Press enter to change direciton, Press shift to start, Fly 2500 to win", 50, 200);
 }
 }
 // Use the enter button to reverse the direction of the bird character in order to dodge obstacles

@@ -26,7 +26,7 @@ void move2() {
   if (rocksX > width+300) {
     rocksX = 0;
     rocksY = random(5,150);
-    if (frameCount>2200){
+    if (frameCount>2500){
       rocksX = 0;
       rocksY=-1000;
   }
