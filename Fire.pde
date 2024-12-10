@@ -1,3 +1,4 @@
+//Small bits of this code were used from the Train_part_3_complete
 class Fire {
   PVector position;
   PVector velocity;
@@ -11,7 +12,7 @@ class Fire {
    void display() {
      //draw fire
      fill(255,100,0);
-triangle(random(5,1500), 50, 0, -100, 0, 25);
+triangle(random(5,150), 50, 0, -100, 0, 25);
 rect(0,-frameCount/15+300,1000,1000);
    }
   
